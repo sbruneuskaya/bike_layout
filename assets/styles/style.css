@@ -39,6 +39,7 @@
     position: sticky;
     top: 0;
     left: 0;
+    z-index: 3;
 }
 
 .header-logo {
@@ -112,15 +113,6 @@
     padding-bottom: 26px;
 }
 
-.move-with-impact-block {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    max-width: 100%;
-    width: 100%;
-    background: url("../images/move_with.png")no-repeat;
-}
-
 .purple-buttom {
     width: 100%;
     background: #7140EB;
@@ -134,6 +126,15 @@
 }
 
 /* move-with */
+
+.move-with-impact-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    max-width: 100%;
+    width: 100%;
+    background: url("../images/move_with.png")no-repeat;
+}
 
 .move-with-impact-block__title {
     color: #FBF7F3;
