@@ -1,0 +1,342 @@
+@import './main';
+
+@mixin flex_name($display, $direction, $jc, $ai) {
+  display: $display;
+  flex-direction: $direction;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin padding_name($top, $bottom, $left, $right) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+  padding-left: $left;
+  padding-right: $right;
+}
+
+@mixin parent_position($width, $position, $pt) {
+  width: $width;
+  position: $position;
+  padding-top: $pt;
+}
+
+@mixin child_position($position, $left, $top, $width, $height) {
+  position: $position;
+  left: $left;
+  top: $top;
+  width: $width;
+  height: $height;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.header {
+  @include flex_name(flex, row, space-between, center);
+  max-width: 100%;
+  background-color: $bg_color;
+  padding: 21px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 3;
+
+  .header-logo {
+    max-width: 99px;
+  }
+
+  &-menu {
+    @include flex_name(flex, row, space-around, center);
+    max-width: 663px;
+    width: 100%;
+    background: white;
+    border-radius: 9999px;
+    padding: 7px;
+  }
+
+  &-menu-li {
+    display: flex;
+    list-style-type: none;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu__item {
+    text-decoration: none;
+    margin: 17px;
+    color: #8D867C;
+  }
+
+  .menu__item:first-child {
+    color: black;
+  }
+
+  &-buttom {
+    width: 100%;
+    background: #7140EB;
+    color: $bg_color;
+    @include padding_name(10px, 10px, 25px, 25px);
+    border-radius: 20px;
+    border: 0;
+    cursor: pointer;
+  }
+
+  #menu__toggle {
+    opacity: 0;
+  }
+}
+
+.title {
+  color: #49464F;
+  font-size: 80px;
+}
+
+.subtitle {
+  color: #8172A2;
+  font-size: 20px;
+}
+
+.purple-block {
+  @include flex_name(flex, column, center, center);
+  max-width: 100%;
+  background: url("../images/purple.png") no-repeat;
+  @include padding_name(60px, 60px, 0, 0);
+
+
+  .purple-subtitle {
+    max-width: 380px;
+    @include padding_name(26px, 26px, 0, 0);
+  }
+
+  .purple-buttom {
+    width: 100%;
+    background: #7140EB;
+    color: $bg_color;
+    @include padding_name(10px, 10px, 25px, 25px);
+    border-radius: 20px;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .white-color {
+    color: $bg_color;
+  }
+
+
+}
+
+
+.move-with-impact-block {
+  @include flex_name(flex, column, center, flex-end);
+  max-width: 100%;
+  width: 100%;
+  background: url("../images/move_with.png") no-repeat;
+
+  &__title {
+    color: $bg_color;
+    font-size: 93px;
+    @include padding_name(81px, 0, 0, 52px);
+
+  }
+
+  &__subtitle {
+    color: $bg_color;
+    font-size: 29px;
+    @include padding_name(0, 570px, 0, 52px);
+
+  }
+}
+
+.builet-to-move-block {
+  @include flex_name(flex, row, center, center);
+  max-width: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+  background: $bg_color;
+
+  &__list {
+    max-width: 220px;
+    width: 100%;
+  }
+
+  &__list__item {
+    @include flex_name(flex, row, flex-start, center);
+    max-width: 210px;
+    margin-bottom: 26px;
+  }
+
+  &__list__circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #7140EB;
+    margin-right: 15px;
+  }
+
+  &__list__text {
+    @include flex_name(flex, column, center, flex-end);
+    color: #8172A2;
+    font-size: 19px;
+
+  }
+
+  &__list__text__title {
+    color: #49464F;
+    font-size: 12px;
+    margin-bottom: 25px;
+  }
+
+  &__logo {
+    @include flex_name(flex, row, center, flex-end);
+  }
+
+  &__text__title {
+    margin-bottom: 46px;
+    max-width: 440px;
+  }
+
+  &__text__subtitle {
+    max-width: 317px;
+  }
+
+}
+
+.bike-block {
+  @include flex_name(flex, column, center, center);
+  max-width: 100%;
+  width: 100%;
+  background: $bg_color;
+
+  &__logo {
+    @include parent_position(100%, relative, 56.25%);
+
+  }
+
+  &__logo__img {
+    @include child_position(absolute, 0, 0, 100%, auto);
+  }
+
+  &__subtitle {
+    margin-top: 25px;
+  }
+
+}
+
+
+.bike-part-block {
+  @include flex_name(flex, row, space-evenly, center);
+  @include padding_name(150px, 120px, 0, 0);
+  flex-wrap: wrap;
+  width: 100%;
+  background: $bg_color;
+
+  &__text {
+    @include padding_name(22px, 12px, 0, 0);
+    max-width: 163px;
+    color: #2E2C34;
+  }
+
+  &__title {
+    font-size: 30px;
+  }
+
+  &__subtitle {
+    font-size: 20px;
+  }
+
+}
+
+
+.foto-block {
+  @include parent_position(100%, relative, 56.25%);
+
+  &__img {
+    @include child_position(absolute, 0, 0, 100%, auto);
+
+  }
+}
+
+
+.three-photos-block {
+  @include flex_name(flex, column, center, flex-start);
+  padding-top: 194px;
+  background: $bg_color;
+
+  &__title {
+    padding-left: 182px;
+  }
+
+  &__subtitle {
+    @include padding_name(0, 174px, 182px, 0);
+
+    max-width: 500px;
+
+  }
+
+  &__picture {
+    @include flex_name(flex, row, space-evenly, center);
+
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &__picture__text {
+    color: #49464F;
+    font-size: 23px;
+    max-width: 287px;
+    margin-top: 77px;
+  }
+}
+
+
+.footer {
+  @include flex_name(flex, row, space-between, center);
+  width: 100%;
+  flex-wrap: wrap;
+  background: $bg_color;
+
+  &-text__title {
+    text-align: center;
+    margin-top: 25px;
+  }
+
+  &-text__subtitle {
+    max-width: 545px;
+    margin-left: 54px;
+    margin-top: 34px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
