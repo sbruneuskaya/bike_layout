@@ -1,9 +1,22 @@
+@import './_main';
+
+
+@mixin background($position, $size) {
+  background-position: $position;
+  background-size: $size;
+
+}
+
+@mixin display-position($display, $position) {
+  display: $display;
+  position: $position;
+}
+
 @media screen and (max-width: 1920px) {
   * {
     padding: 0;
     margin: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
   }
   .container {
     max-width: 1920px;
@@ -11,12 +24,11 @@
     margin: 0 auto;
   }
   .purple-block {
-    background-position: center;
-    background-size: cover;
+    @include background(center, cover);
+
   }
   .move-with-impact-block {
-    background-position: center;
-    background-size: cover;
+    @include background(center, cover);
   }
   .move-with-impact-block__subtitle {
     padding-bottom: 811px;
@@ -25,15 +37,9 @@
 
 @media screen and (max-width: 1328px) {
   .footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    background: #FBF7F3;
+    @include display-position(flex, relative);
+    flex-direction: column;
+    background: $bg_color;
   }
   .item1 {
     position: absolute;
@@ -85,30 +91,19 @@
 
 @media screen and (max-width: 768px) {
   .header-menu {
-    background: #FBF7F3;
+    background: $bg_color;
   }
   .header-buttom {
     display: none;
   }
   .header-logo {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
   }
   .menu__btn {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: fixed;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    @include display-position(flex, fixed);
+    align-items: center;
     top: 20px;
     right: 20px;
     width: 26px;
@@ -117,8 +112,7 @@
     z-index: 1;
   }
   .menu__btn > span, .menu__btn > span::before, .menu__btn > span::after {
-    display: block;
-    position: absolute;
+    @include display-position(block, absolute);
     width: 100%;
     height: 2px;
     background-color: #616161;
@@ -132,8 +126,7 @@
     top: 8px;
   }
   .menu__box {
-    display: block;
-    position: fixed;
+    @include display-position(block, fixed);
     visibility: hidden;
     top: 0;
     right: -100%;
@@ -143,8 +136,7 @@
     list-style: none;
     text-align: center;
     background-color: #7140EB;
-    -webkit-box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
-            box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
   }
   .menu__item {
     display: block;
@@ -159,18 +151,15 @@
     background-color: #CFD8DC;
   }
   #menu__toggle:checked ~ .menu__btn > span {
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
+    transform: rotate(45deg);
   }
   #menu__toggle:checked ~ .menu__btn > span::before {
     top: 0;
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
   }
   #menu__toggle:checked ~ .menu__btn > span::after {
     top: 0;
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
+    transform: rotate(90deg);
   }
   #menu__toggle:checked ~ .menu__box {
     visibility: visible;
@@ -189,8 +178,8 @@
     font-size: 25px;
   }
   .move-with-impact-block {
-    background-position: center;
-    background-size: cover;
+    @include background(center, cover);
+
   }
   .move-with-impact-block__subtitle {
     padding-bottom: 200px;
@@ -210,13 +199,8 @@
     padding-left: 50px;
   }
   .three-photos-block__picture__item {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    flex-direction: column-reverse;
   }
   .three-photos-block__picture__text {
     margin-bottom: 10px;
@@ -232,8 +216,8 @@
     font-size: 15px;
   }
   .move-with-impact-block {
-    background-position: left;
-    background-size: cover;
+    @include background(left, cover);
+
   }
   .move-with-impact-block__title {
     font-size: 45px;
@@ -252,6 +236,7 @@
     margin-bottom: 20px;
   }
   .bike-part-block__text {
+
     margin-bottom: 20px;
   }
   .picture-footer {
@@ -264,8 +249,7 @@
 
 @media screen and (max-width: 320px) {
   .move-with-impact-block {
-    background-position: left;
-    background-size: cover;
+    @include background(left, cover);
+
   }
 }
-/*# sourceMappingURL=media.css.map */
