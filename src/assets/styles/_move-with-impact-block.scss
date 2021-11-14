@@ -1,0 +1,25 @@
+.move-with-impact-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    max-width: 100%;
+    width: 100%;
+    background: url("../images/move_with.png") no-repeat;
+  
+    &__title {
+      color: $bg_color;
+      font-size: 93px;
+      padding-top: 81px;
+      padding-right: 52px;
+  
+    }
+  
+    &__subtitle {
+      color: $bg_color;
+      font-size: 29px;
+      padding-bottom: 570px;
+      padding-right: 52px
+  
+    }
+  }
