@@ -1,83 +1,93 @@
+@import "main";
+
 @media screen and (max-width: 1920px) {
   * {
     padding: 0;
     margin: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
   }
+
   .container {
     max-width: 1920px;
     width: 100%;
     margin: 0 auto;
   }
-  .purple-block {
+
+  .purple {
     background-position: center;
     background-size: cover;
+
   }
-  .move-with-impact-block {
+
+  .move-with-impact {
     background-position: center;
     background-size: cover;
+
   }
-  .move-with-impact-block__subtitle {
+
+  .move-with-impact__subtitle {
     padding-bottom: 811px;
   }
 }
 
 @media screen and (max-width: 1328px) {
   .footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     position: relative;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    background: #FBF7F3;
+    flex-direction: column;
+    background: $bg_color;
   }
-  .item1 {
+
+  .item-right {
     position: absolute;
     left: 0;
   }
-  .item2 {
+
+  .item-left {
     position: absolute;
     right: 0;
   }
+
   .footer-text {
     margin-top: 500px;
   }
 }
 
 @media screen and (max-width: 1100px) {
-  .builet-to-move-block__list {
+  .builet__list {
     position: relative;
     left: -250px;
   }
-  .builet-to-move-block__list__text__title {
+
+  .builet__list__text__title {
     font-size: 25px;
   }
-  .builet-to-move-block__logo__img {
+
+  .builet__logo__img {
     position: relative;
     bottom: -350px;
   }
 }
 
 @media screen and (max-width: 879px) {
-  .builet-to-move-block__list {
+  .builet__list {
     position: static;
     left: 0;
     margin-top: 20px;
   }
-  .builet-to-move-block__logo__img {
+
+  .builet__logo__img {
     position: static;
     bottom: 0;
   }
-  .move-with-impact-block__title {
+
+  .move-with-impact__title {
     font-size: 55px;
     text-align: center;
     padding-right: 5px;
   }
-  .move-with-impact-block__subtitle {
+
+  .move-with-impact__subtitle {
     padding-right: 5px;
     text-align: center;
   }
@@ -85,30 +95,23 @@
 
 @media screen and (max-width: 768px) {
   .header-menu {
-    background: #FBF7F3;
+    background: $bg_color;
   }
-  .header-buttom {
+
+  .header-button {
     display: none;
   }
+
   .header-logo {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
   }
+
   .menu__btn {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     position: fixed;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     top: 20px;
     right: 20px;
     width: 26px;
@@ -116,6 +119,7 @@
     cursor: pointer;
     z-index: 1;
   }
+
   .menu__btn > span, .menu__btn > span::before, .menu__btn > span::after {
     display: block;
     position: absolute;
@@ -123,14 +127,17 @@
     height: 2px;
     background-color: #616161;
   }
+
   .menu__btn > span::before {
     content: '';
     top: -8px;
   }
+
   .menu__btn > span::after {
     content: '';
     top: 8px;
   }
+
   .menu__box {
     display: block;
     position: fixed;
@@ -143,9 +150,9 @@
     list-style: none;
     text-align: center;
     background-color: #7140EB;
-    -webkit-box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
-            box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
   }
+
   .menu__item {
     display: block;
     padding: 12px 24px;
@@ -155,70 +162,80 @@
     font-weight: 600;
     text-decoration: none;
   }
+
   .menu__item:hover {
     background-color: #CFD8DC;
   }
+
   #menu__toggle:checked ~ .menu__btn > span {
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
+    transform: rotate(45deg);
   }
+
   #menu__toggle:checked ~ .menu__btn > span::before {
     top: 0;
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
+    transform: rotate(0);
   }
+
   #menu__toggle:checked ~ .menu__btn > span::after {
     top: 0;
-    -webkit-transform: rotate(90deg);
-            transform: rotate(90deg);
+    transform: rotate(90deg);
   }
+
   #menu__toggle:checked ~ .menu__box {
     visibility: visible;
     right: 0;
   }
-  .purple-block {
-    padding: 0 5px;
+
+  .purple .title {
+    font-weight: 600;
   }
-  .purple-buttom {
+
+  .purple-button {
     display: none;
   }
+
   .title {
     font-size: 45px;
   }
+
   .subtitle {
     font-size: 25px;
   }
-  .move-with-impact-block {
+
+  .move-with-impact {
     background-position: center;
     background-size: cover;
+
   }
-  .move-with-impact-block__subtitle {
+
+  .move-with-impact__subtitle {
     padding-bottom: 200px;
   }
-  .bike-part-block__title {
+
+  .bike-part__title {
     max-width: 329px;
     text-align: center;
     font-weight: bold;
   }
-  .bike-part-block__subtitle {
+
+  .bike-part__subtitle {
     max-width: 320px;
   }
-  .three-photos-block__title {
+
+  .photo-items__title {
     padding-left: 50px;
   }
-  .three-photos-block__subtitle {
+
+  .photo-items__subtitle {
     padding-left: 50px;
   }
-  .three-photos-block__picture__item {
-    display: -webkit-box;
-    display: -ms-flexbox;
+
+  .photo-items__picture__item {
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
+    flex-direction: column-reverse;
   }
-  .three-photos-block__picture__text {
+
+  .photo-items__picture__text {
     margin-bottom: 10px;
     font-weight: bold;
   }
@@ -228,44 +245,77 @@
   .title {
     font-size: 20px;
   }
+
   .subtitle {
     font-size: 15px;
   }
-  .move-with-impact-block {
-    background-position: left;
-    background-size: cover;
-  }
-  .move-with-impact-block__title {
-    font-size: 45px;
-  }
-  .move-with-impact-block__subtitle {
-    padding-bottom: 200px;
-  }
-  .builet-to-move-block__logo__img {
-    display: none;
-  }
-  .builet-to-move-block__text__title {
+
+  .purple .title {
     font-size: 30px;
   }
-  .builet-to-move-block__text__subtitle {
-    font-size: 20px;
-    margin-bottom: 20px;
+
+  .move-with-impact {
+    background-position: left;
+    background-size: cover;
+
   }
-  .bike-part-block__text {
-    margin-bottom: 20px;
+
+  .move-with-impact__title {
+    font-size: 45px;
   }
-  .picture-footer {
+
+  .move-with-impact__subtitle {
+    padding-bottom: 200px;
+  }
+
+  .builet__logo__img {
     display: none;
   }
+
+  .builet__text__title {
+    font-size: 30px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .builet__text__subtitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .photo-items {
+    padding-top: 100px;
+  }
+
+  .photo-items__title {
+    margin: 0 auto;
+  }
+
+  .photo-items__subtitle {
+    text-align: center;
+    padding: 0 10px;
+    margin-top: 10px;
+  }
+
+  .bike-part__text {
+    margin-bottom: 20px;
+    padding: 20px 10px;
+  }
+
+  .footer-img {
+    display: none;
+  }
+
   .footer-text {
     display: none;
   }
 }
 
 @media screen and (max-width: 320px) {
-  .move-with-impact-block {
+  .move-with-impact {
     background-position: left;
     background-size: cover;
+
   }
 }
-/*# sourceMappingURL=media.css.map */

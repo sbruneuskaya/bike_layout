@@ -1,0 +1,22 @@
+@import "main";
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  background: $bg_color;
+
+  &-text__title {
+    text-align: center;
+    margin-top: 25px;
+  }
+
+  &-text__subtitle {
+    max-width: 545px;
+    margin-left: 54px;
+    margin-top: 34px;
+  }
+}

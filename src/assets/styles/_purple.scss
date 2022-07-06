@@ -1,0 +1,31 @@
+@import "main";
+
+.purple {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  background: url('../images/purple.png') no-repeat;
+  padding: 60px 0;
+
+  .purple-subtitle {
+    max-width: 380px;
+    margin: 26px 0;
+    text-align: center;
+  }
+
+  .purple-button {
+    width: 100%;
+    background: $purple;
+    color: $bg_color;
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .white-color {
+    color: $bg_color;
+  }
+}
